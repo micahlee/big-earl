@@ -1,0 +1,50 @@
+
+<div class="row">
+    <div class="col-xs-12 col-md-offset-2 col-md-8">
+        <h1>
+        Preview Short URL
+        <small class="pull-right">
+            <a class="btn btn-link" href="<%=root_path%>">
+            <i class="fa fa-asterisk"></i>
+            Create New Short Link
+            </a>
+        </small>
+        </h1>
+
+        <div class="panel text-black">
+            <div class="panel-heading text-black">
+                <h3 class="panel-title">Short Link</h3>
+            </div>
+            <div class="panel-body">
+                <strong>
+                    <%= link_to short_link_url(@short_link.code), short_link_url(@short_link.code), id: 'short_url' %>
+                </strong>
+                <div>
+                    <buttontype="button" class="btn btn-sm btn-link" onclick="copyToClipboard('short_url')" >
+                        <i class="fa fa-copy"></i>
+                        Copy to Clipboard
+                    </button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="panel text-black">
+            <div class="panel-heading text-black">
+                <h3 class="panel-title">Expanded URL</h3>
+            </div>
+            <div class="panel-body">
+                <strong><%= @short_link.url %></strong>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-heading text-black">
+                <h3 class="panel-title">Link Preview Image</h3>
+            </div>
+            <div class="panel-body text-center">
+                <img class="link-preview" src="<%= short_link_thumbnail_path @short_link.code %>">
+            </div>
+        </div>
+    </div>
+</div>

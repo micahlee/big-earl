@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
+body {
+    background-color: #212e44;
+    color: #fff;
+}
+
+.title {
+    font-family: 'Bangers', cursive;
+}
+
+img.logo {
+    height: 300px;
+}
+
+h1 {
+    .btn-link,
+    .btn-link:hover,
+    .btn-link:active {
+        color: #fff;
+    }
+}
+
+.text-black {
+    color: #000;
+}
+
+.text-faded {
+    opacity: 0.7;
+}
+
+.image-credit {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.link-preview {
+    max-width: 100%;
+}

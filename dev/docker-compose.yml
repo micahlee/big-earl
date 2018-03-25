@@ -1,0 +1,26 @@
+version: "3"
+services:
+  pg:
+    image: postgres
+
+  big-earl:
+    image: big-earl-dev
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"
+    volumes:
+    - ..:/src/big-earl
+    links:
+    - pg:pg
+
+  cucumber:
+    image: big-earl-dev
+    entrypoint: bash  
+    environment:
+      BIG_EARL_URL: http://big-earl:3000
+    volumes:
+    - ..:/src/big-earl
+    links:
+    - big-earl:big-earl
+    - pg:pg

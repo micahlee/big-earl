@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2 text-center">
+    <h1 class="title">Big Earl's</h1>
+
+    <img class="logo" src="<%=image_path("big_earl.png")%>">
+    <h2 class="title">lean urls</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+
+
+    <%= form_with model: @short_link, url: create_path, method: "post", local: true do |form| %>
+      <% if @short_link.errors.any? %>
+        <div class="alert alert-danger" role="alert">
+          <ul>
+            <% @short_link.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="input-group">
+        <%= form.text_field :url, 
+            type: "url", 
+            class: "form-control", 
+            placeholder: "URL to shrink..." %>
+        <span class="input-group-btn">
+          <%= form.submit "Shrink It!", class: "btn btn-success" %>
+        </span>
+      </div><!-- /input-group -->
+      <span class="text-faded">e.g. https://google.com</span>
+    <% end %>
+  </div>
+  
+</div>
+
+<div class="image-credit">
+  <a href='https://www.freepik.com/free-vector/obese-young-man-running-on-treadmill_1311337.htm'>Logo Graphic Designed by Freepik</a>
+</div>
