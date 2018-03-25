@@ -6,7 +6,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/15be40bda380df25f471/maintainability)](https://codeclimate.com/github/micahlee/big-earl/maintainability)
 
 
-![Docker Pulls](https://img.shields.io/docker/pulls/micahlee/big-earl.svg)
+[![Docker Pulls](https://img.shields.io/docker/pulls/micahlee/big-earl.svg)](https://hub.docker.com/r/micahlee/big-earl/)
 
 
 Big Earl exists to trim the fat from long URLs, making them easier and safer to share with others:
