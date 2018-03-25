@@ -18,9 +18,10 @@ services:
 
   cucumber:
     image: big-earl-dev
-    entrypoint: bash  
-    environment:
+    entrypoint: cucumber
+    environment: 
       BIG_EARL_URL: http://big-earl:3000
+      DB_HOST_TEST: pg
     volumes:
     - ..:/src/big-earl
     links:

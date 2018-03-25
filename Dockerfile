@@ -30,14 +30,13 @@ WORKDIR /opt/big_earl
 ADD Gemfile      .
 ADD Gemfile.lock .
 
-RUN bundle --without test development
-
 ADD . .
 
-ENV PORT 80
-
-EXPOSE 80
-
 ENV RAILS_ENV production
+RUN bundle --without test development
+RUN rails assets:precompile
+
+ENV PORT 80
+EXPOSE 80
 
 ENTRYPOINT [ "rails", "server", "-b", "0.0.0.0", "-p", "80" ]
