@@ -40,5 +40,6 @@ RUN bundle
 RUN rm /etc/service/sshd/down
 
 ENV PORT 3000
+ENV DB_HOST_TEST pg
 
 EXPOSE 3000

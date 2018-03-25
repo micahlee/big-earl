@@ -20,6 +20,7 @@ development:
 # Do not set this db to the same as development or production.
 test: &test
   <<: *default
+  host: <%= ENV["DB_HOST_TEST"] %>
   database: big_earl_test
 
 production:

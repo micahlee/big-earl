@@ -5,6 +5,8 @@ services:
 
   big-earl:
     image: big-earl-dev
+    environment:
+      DB_HOST_TEST: pg
     ports:
       - "3000:3000"
     expose:

@@ -2,6 +2,7 @@
 language: ruby
 env: 
   - RAILS_ENV=test
+  - DB_HOST_TEST=localhost
 before_script:
   - psql -c 'create database big_earl_test;' -U postgres
   - rake db:migrate
