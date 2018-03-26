@@ -58,4 +58,9 @@ h1 {
 
 .link-preview {
     max-width: 100%;
+    min-height: 100px;
+    min-width: 100px;
+
+    background-size: cover;
+    background-image: url('/Rolling-1s-100px.gif');
 }

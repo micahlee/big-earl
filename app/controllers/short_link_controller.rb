@@ -17,11 +17,16 @@ class ShortLinkController < ApplicationController
     @short_link.code = generate_code
 
     unless @short_link.save
-      render 'new'
+      respond_to do |format|
+        format.html do
+          render 'new', status: 403
+        end
+        format.json do
+          render json: { messages: @short_link.errors.to_json }, status: 403
+        end
+      end
       return
     end
-
-    generate_thumbnail @short_link.code
 
     # If the request is from the browser, redirect
     # to the preview page. Otherwise, respond with a
@@ -67,8 +72,9 @@ class ShortLinkController < ApplicationController
     not_found if @short_link.nil?
 
     filename = "#{THUMBNAIL_DIR}/#{@short_link.code}.png"
-    filename = (File.exist?(filename) ? filename : 'public/no_preview.png')
+    generate_thumbnail @short_link.code unless File.exist?(filename)
 
+    filename = (File.exist?(filename) ? filename : 'public/no_preview.png')
     send_file filename, type: 'image/png', disposition: 'inline'
   end
 

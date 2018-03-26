@@ -7,7 +7,7 @@ Given(/^I( (?:can|successfully))? create a short URL for "([^"]*)"$/) do |can, u
         }
     )
     step 'I POST "/" with body:', request_body
-    step 'the HTTP response status code is 200'
+    step 'the HTTP response status code is 200' unless can.nil?
 end
 
 When("I GET the short URL") do

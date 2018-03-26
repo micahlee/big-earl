@@ -20,10 +20,15 @@
                     <%= link_to short_link_url(@short_link.code), short_link_url(@short_link.code), id: 'short_url' %>
                 </strong>
                 <div>
-                    <buttontype="button" class="btn btn-sm btn-link" onclick="copyToClipboard('short_url')" >
+                    <button type="button" class="btn btn-sm btn-link" onclick="copyToClipboard('short_url')" >
                         <i class="fa fa-copy"></i>
                         Copy to Clipboard
                     </button>
+
+                    <span id="successIndicator" class="text-success" style="display: none">
+                        <i class="fa fa-check"></i>
+                        Copied
+                    </span>
                 </div>
                 
             </div>
