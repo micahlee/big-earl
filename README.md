@@ -7,6 +7,7 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/micahlee/big-earl.svg)](https://hub.docker.com/r/micahlee/big-earl/)
 
+![ScreenShot](screenshot.png)
 
 Big Earl exists to trim the fat from long URLs, making them easier and safer to share with others:
 
