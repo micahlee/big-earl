@@ -125,3 +125,8 @@ Feature: API to Shorten URL
 11 steps (11 passed)
 0m9.164s
 ```
+
+## Deployment
+
+Big Earl is ready to deploy on Heroku:
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)

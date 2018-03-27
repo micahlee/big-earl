@@ -1,0 +1,26 @@
+{
+    "name": "Big Earl",
+    "description": "Big Earl trims the fat from long URLs.",
+    "website": "https://github.com/micahlee/big-earl",
+    "success_url": "/",
+    "addons": ["heroku-postgresql:hobby-dev"],
+
+    "buildpacks": [{
+            "url": "https://github.com/stomita/heroku-buildpack-phantomjs"
+        },
+        {
+            "url": "heroku/ruby"
+        }
+    ],
+
+    "env": {
+        "RAILS_ENV": "production",
+        "PATH": "/usr/local/bin:/usr/bin:/bin:/app/vendor/phantomjs/bin",
+        "RAILS_SERVE_STATIC_FILES": "enabled",
+        "RAILS_LOG_TO_STDOUT": "enabled"
+    },
+
+    "scripts": {
+        "postdeploy": "rails db:migrate"
+    }
+}
