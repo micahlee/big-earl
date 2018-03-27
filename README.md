@@ -17,13 +17,15 @@ Big Earl exists to trim the fat from long URLs, making them easier and safer to 
 
 * Preview link destinations before navigating to unknown destinations for safer browsing
 
+* CLI client for interacting with service: https://github.com/micahlee/big-earl-cli
+
 ## Getting Started
 
 There are a couple of different ways to try out Big Earl:
 
 1. Cloud demo server
 
-    You can access the a demo instance online at `https://big-earl.herokuapp.com/`
+    You can access the a demo instance online at https://big-earl.herokuapp.com/
 
 2. Run locally on Docker
 
